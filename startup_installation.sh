@@ -51,5 +51,8 @@ sudo dnf install akmod-nvidia -y
 sudo dnf install xorg-x11-drv-nvidia-cuda -y
 sudo dnf install gcc kernel-headers kernel-devel akmod-nvidia xorg-x11-drv-nvidia xorg-x11-drv-nvidia-libs xorg-x11-drv-nvidia-libs.i686 -y
 
+# LaTex support
+sudo dnf install texlive-scheme-basic texlive-scheme-medium texlive-scheme-full -y
+
 # Flathub based installations
 flatpak install flathub org.wezfurlong.wezterm -y
