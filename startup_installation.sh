@@ -1,5 +1,4 @@
 # dnf config
-
 sudo echo "
 
 # Added for speed
@@ -32,7 +31,7 @@ sudo usermod --shell /usr/bin/zsh $USER
 sudo usermod --shell /usr/bin/zsh root
 
 # Development stuff
-sudo dnf install make automake gcc gcc-c++ kernel-devel -y
+sudo dnf install make automake gcc gcc-c++ kernel-devel nodejs java-11-openjdk.x86_64 java-11-openjdk-devel.x86_64 -y
 sudo dnf groupinstall "Development Tools" "Development Libraries" -y
 ## Python 3 and pip3
 sudo dnf install python3 python3-venv python3-pip -y
@@ -40,6 +39,11 @@ sudo dnf install python3 python3-venv python3-pip -y
 pip3 install matplotlib numpy matplotlib jupyterlab
 ## Rust programming language
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+## Creates the folders to work on
+mkdir -p ~/GitHub/Youngermaster/
+mkdir ~/GitHub/AnotherOnes/
+mkdir -p ~/GitLab/Youngermaster/
+mkdir ~/GitLab/AnotherOnes/
 
 # Multimedia stuff
 sudo dnf install vlc kmod-v4l2loopback kdenlive -y
