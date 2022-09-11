@@ -60,3 +60,17 @@ sudo dnf install texlive-scheme-basic texlive-scheme-medium texlive-scheme-full 
 
 # Flathub based installations
 flatpak install flathub org.wezfurlong.wezterm -y
+
+# Tiling window manager
+sudo dnf install bspwm sxhkd rofi neovim alacritty viewnior picom brightnessctl playerctl mpd mpdris2 maim jq xclip jgmenu -y
+sudo dnf install -y autoconf automake cairo-devel fontconfig gcc libev-devel libjpeg-turbo-devel libXinerama libxkbcommon-devel libxkbcommon-x11-devel libXrandr pam-devel pkgconf xcb-util-image-devel xcb-util-xrm-devel
+cd ~/GitHub/AnotherOnes
+git clone https://github.com/Raymo111/i3lock-color.git
+cd i3lock-color
+./build.sh
+./install-i3lock-color.sh
+sudo dnf install ffmpeg xdotool -y
+cd ~/GitHub/AnotherOnes
+git clone https://github.com/phisch/giph.git
+cd giph
+sudo make install
