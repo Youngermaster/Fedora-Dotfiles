@@ -24,7 +24,7 @@ sudo dnf groupupdate sound-and-video -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # General stuff
-sudo dnf install vim neofetch keepassxc gnome-tweaks gnome-extensions-app git cmake htop wget curl nmap ranger bat lsd discord flameshot discord google-chrome -y
+sudo dnf install vim neofetch keepassxc gnome-tweaks gnome-extensions-app git cmake htop xrandr wget curl nmap ranger bat lsd discord flameshot discord google-chrome -y
 
 # ZSH
 sudo dnf install zsh zsh-syntax-highlighting zsh-autosuggestions -y
@@ -49,3 +49,7 @@ sudo dnf update --refresh -y
 sudo dnf upgrade --refresh -y
 sudo dnf install akmod-nvidia -y
 sudo dnf install xorg-x11-drv-nvidia-cuda -y
+sudo dnf install gcc kernel-headers kernel-devel akmod-nvidia xorg-x11-drv-nvidia xorg-x11-drv-nvidia-libs xorg-x11-drv-nvidia-libs.i686 -y
+
+# Flathub based installations
+flatpak install flathub org.wezfurlong.wezterm -y
