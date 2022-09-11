@@ -24,11 +24,28 @@ sudo dnf groupupdate sound-and-video -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # General stuff
-sudo dnf install vim neofetch keepassxc gnome-tweaks gnome-extensions-app git cmake htop wget curl nmap ranger -y
+sudo dnf install vim neofetch keepassxc gnome-tweaks gnome-extensions-app git cmake htop wget curl nmap ranger bat lsd -y
+
+# ZSH
+sudo dnf install zsh zsh-syntax-highlighting zsh-autosuggestions -y
+sudo usermod --shell /usr/bin/zsh $USER
+sudo usermod --shell /usr/bin/zsh root
 
 # Development stuff
 sudo dnf install make automake gcc gcc-c++ kernel-devel -y
 sudo dnf groupinstall "Development Tools" "Development Libraries" -y
+## Python 3 and pip3
+sudo dnf install python3 python3-venv python3-pip -y
+## General packages for Python3
+pip3 install matplotlib numpy matplotlib jupyterlab
+## Rust programming language
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # Multimedia stuff
-sudo dnf install vlc -y
+sudo dnf install vlc kmod-v4l2loopback -y
+
+# Installing Nvidia Drivers
+sudo dnf update --refresh -y
+sudo dnf upgrade --refresh -y
+sudo dnf install akmod-nvidia -y
+sudo dnf install xorg-x11-drv-nvidia-cuda -y
