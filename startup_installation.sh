@@ -24,7 +24,7 @@ sudo dnf groupupdate sound-and-video -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # General stuff
-sudo dnf install vim neofetch keepassxc gnome-tweaks gnome-extensions-app git cmake htop wget curl nmap ranger bat lsd -y
+sudo dnf install vim neofetch keepassxc gnome-tweaks gnome-extensions-app git cmake htop wget curl nmap ranger bat lsd discord flameshot discord google-chrome -y
 
 # ZSH
 sudo dnf install zsh zsh-syntax-highlighting zsh-autosuggestions -y
@@ -42,7 +42,7 @@ pip3 install matplotlib numpy matplotlib jupyterlab
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # Multimedia stuff
-sudo dnf install vlc kmod-v4l2loopback -y
+sudo dnf install vlc kmod-v4l2loopback kdenlive -y
 
 # Installing Nvidia Drivers
 sudo dnf update --refresh -y
