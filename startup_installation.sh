@@ -44,6 +44,7 @@ mkdir -p ~/GitHub/Youngermaster/
 mkdir ~/GitHub/AnotherOnes/
 mkdir -p ~/GitLab/Youngermaster/
 mkdir ~/GitLab/AnotherOnes/
+mkdir ~/ISOs ~/AndroidStudio ~/Flutter
 
 # Multimedia stuff
 sudo dnf install vlc kmod-v4l2loopback kdenlive -y
@@ -60,6 +61,11 @@ sudo dnf install texlive-scheme-basic texlive-scheme-medium texlive-scheme-full 
 
 # Flathub based installations
 flatpak install flathub org.wezfurlong.wezterm -y
+flatpak install flathub io.github.mimbrero.WhatsAppDesktop -y
+flatpak install flathub org.telegram.desktop -y
+flatpak install flathub com.spotify.Client -y
+flatpak install flathub md.obsidian.Obsidian -y
+mkdir ~/Obsidian/
 
 # Tiling window manager
 sudo dnf install bspwm sxhkd rofi neovim alacritty viewnior picom brightnessctl playerctl mpd mpdris2 maim jq xclip jgmenu -y
