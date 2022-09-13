@@ -55,6 +55,15 @@ sudo dnf upgrade --refresh -y
 sudo dnf install akmod-nvidia -y
 sudo dnf install xorg-x11-drv-nvidia-cuda -y
 sudo dnf install gcc kernel-headers kernel-devel akmod-nvidia xorg-x11-drv-nvidia xorg-x11-drv-nvidia-libs xorg-x11-drv-nvidia-libs.i686 -y
+sudo dnf install libdrm-devel cmake ncurses-devel git gcc-c++ -y
+cd ~/GitHub/AnotherOnes
+git clone https://github.com/Syllo/nvtop.git
+mkdir -p nvtop/build
+cd nvtop/build
+cmake .. -DNVIDIA_SUPPORT=ON -DAMDGPU_SUPPORT=ON
+make
+sudo make install
+cd ~/
 
 # LaTex support
 sudo dnf install texlive-scheme-basic texlive-scheme-medium texlive-scheme-full -y
