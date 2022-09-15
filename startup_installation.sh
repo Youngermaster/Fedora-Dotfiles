@@ -68,6 +68,10 @@ cd ~/
 # LaTex support
 sudo dnf install texlive-scheme-basic texlive-scheme-medium texlive-scheme-full -y
 
+# VMware support
+sudo dnf install -y kernel-devel-$(uname -r) kernel-headers
+sudo dnf install -y dkms
+
 # Flathub based installations
 flatpak install flathub org.wezfurlong.wezterm -y
 flatpak install flathub io.github.mimbrero.WhatsAppDesktop -y
