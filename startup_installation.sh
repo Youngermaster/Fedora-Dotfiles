@@ -81,6 +81,16 @@ flatpak install flathub com.spotify.Client -y
 flatpak install flathub md.obsidian.Obsidian -y
 mkdir ~/Obsidian/
 
+# Fonts installation
+mkdir -p ~/.fonts/
+mkdir -p ~/.local/share/fonts/
+cp -r misc/fonts/* ~/.fonts/
+cp -r misc/fonts/* ~/.local/share/fonts/
+fc-cache -fv
+
+# Some configs added
+cp -r .config/* ~/.config
+
 # Tiling window manager
 sudo dnf install bspwm sxhkd rofi neovim alacritty viewnior picom brightnessctl playerctl mpd mpdris2 maim jq xclip jgmenu -y
 sudo dnf install -y autoconf automake cairo-devel fontconfig gcc libev-devel libjpeg-turbo-devel libXinerama libxkbcommon-devel libxkbcommon-x11-devel libXrandr pam-devel pkgconf xcb-util-image-devel xcb-util-xrm-devel

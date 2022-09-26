@@ -182,7 +182,7 @@ return {
 	-- General
 	automatically_reload_config = true,
 	inactive_pane_hsb = { saturation = 1.0, brightness = 1.0 },
-	window_background_opacity = 0.4,
+	window_background_opacity = 0.8,
 	window_close_confirmation = "NeverPrompt",
 	window_frame = { active_titlebar_bg = "#090909", font = font_with_fallback(font_name, { bold = true }) },
 }
