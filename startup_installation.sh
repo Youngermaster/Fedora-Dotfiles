@@ -84,8 +84,8 @@ mkdir ~/Obsidian/
 # Fonts installation
 mkdir -p ~/.fonts/
 mkdir -p ~/.local/share/fonts/
-cp -r misc/fonts/* ~/.fonts/
-cp -r misc/fonts/* ~/.local/share/fonts/
+cp -r fonts/* ~/.fonts/
+cp -r fonts/* ~/.local/share/fonts/
 fc-cache -fv
 
 # Some configs added
