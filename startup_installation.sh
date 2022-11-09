@@ -69,6 +69,9 @@ cd ~/
 # LaTex support
 sudo dnf install texlive-scheme-basic texlive-scheme-medium texlive-scheme-full -y
 
+# Virtualbox support
+sudo dnf -y install @development-tools
+sudo dnf -y install kernel-headers kernel-devel dkms elfutils-libelf-devel qt5-qtx11extras
 # VMware support
 sudo dnf install -y kernel-devel-$(uname -r) kernel-headers
 sudo dnf install -y dkms
