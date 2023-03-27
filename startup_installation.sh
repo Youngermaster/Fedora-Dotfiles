@@ -24,15 +24,18 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 
 # General stuff
 sudo dnf install vim neofetch keepassxc gnome-tweaks gnome-extensions-app git cmake htop xrandr wget curl nmap ranger bat lsd discord flameshot -y
+sudo dnf install gnome-shell-extension-user-theme -y
 
 # ZSH
 sudo dnf install zsh zsh-syntax-highlighting zsh-autosuggestions -y
 sudo usermod --shell /usr/bin/zsh $USER
 sudo usermod --shell /usr/bin/zsh root
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
 
 # Development stuff
 sudo dnf install -y kernel-devel kernel-devel-5.17.5-300.fc36.x86_64 liberation-fonts
-sudo dnf install make automake gcc gcc-c++ kernel-devel nodejs java-11-openjdk.x86_64 java-11-openjdk-devel.x86_64 -y
+sudo dnf install make automake gcc gcc-c++ kernel-devel nodejs java-11-openjdk.x86_64 java-11-openjdk-devel.x86_64 yarnpkg -y
 sudo dnf groupinstall "Development Tools" "Development Libraries" -y
 ## Python 3 and pip3
 sudo dnf install python3 python3-venv python3-pip -y
@@ -57,6 +60,33 @@ sudo dnf install akmod-nvidia -y
 sudo dnf install xorg-x11-drv-nvidia-cuda -y
 sudo dnf install gcc kernel-headers kernel-devel akmod-nvidia xorg-x11-drv-nvidia xorg-x11-drv-nvidia-libs xorg-x11-drv-nvidia-libs.i686 -y
 sudo dnf install libdrm-devel cmake ncurses-devel git gcc-c++ -y
+## System76 GPU switcher
+### system76-driver
+sudo dnf copr enable szydell/system76
+sudo dnf install system76* -y
+sudo systemctl enable --now com.system76.PowerDaemon.service
+### System76 Firmware Manager in Fedora
+sudo dnf install firmware-manager -y
+sudo systemctl enable --now system76-firmware-daemon
+sudo gpasswd -a $USER adm
+### System76 Power in Fedora
+sudo systemctl enable com.system76.PowerDaemon.service system76-power-wake
+sudo systemctl start com.system76.PowerDaemon.service
+sudo systemctl mask power-profiles-daemon.service
+### System76 Power GNOME Shell Extension in Fedora
+cd ~/GitHub/AnotherOnes
+git clone https://github.com/pop-os/gnome-shell-extension-system76-power.git
+cd gnome-shell-extension-system76-power
+sudo dnf install nodejs-typescript -y
+make
+make install
+### System76 DKMS in Fedora
+sudo dnf install system76-dkms
+sudo systemctl enable dkms
+### System76 ACPI DKMS in Fedora
+sudo dnf install system76-acpi-dkms
+sudo systemctl enable dkms
+## Nvtop
 cd ~/GitHub/AnotherOnes
 git clone https://github.com/Syllo/nvtop.git
 mkdir -p nvtop/build
