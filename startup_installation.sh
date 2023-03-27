@@ -96,6 +96,17 @@ make
 sudo make install
 cd ~/
 
+# Mongo
+sudo tee /etc/yum.repos.d/mongodb-org-6.0.repo<<EOF
+[mongodb-org-6.0]
+name=MongoDB Repository
+baseurl=https://repo.mongodb.org/yum/redhat/9/mongodb-org/6.0/x86_64/
+gpgcheck=1
+enabled=1
+gpgkey=https://www.mongodb.org/static/pgp/server-6.0.asc
+EOF
+sudo dnf install -y mongodb-org
+
 # LaTex support
 sudo dnf install texlive-scheme-basic texlive-scheme-medium texlive-scheme-full -y
 
