@@ -8,6 +8,8 @@ defaultyes=True
 keepcache=True
 " >> /etc/dnf/dnf.conf
 
+mkdir ~/Obsidian/
+
 # Updating the packages
 sudo dnf update -y
 
@@ -23,7 +25,7 @@ sudo dnf groupupdate sound-and-video -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # General stuff
-sudo dnf install vim neofetch keepassxc gnome-tweaks gnome-extensions-app git cmake htop xrandr wget curl nmap ranger bat lsd discord flameshot -y
+sudo dnf install vim neofetch keepassxc gnome-tweaks gnome-extensions-app git cmake htop xrandr wget curl nmap ranger bat lsd discord flameshot google-chrome-stable -y
 sudo dnf install gnome-shell-extension-user-theme -y
 
 # ZSH
@@ -123,7 +125,14 @@ flatpak install flathub io.github.mimbrero.WhatsAppDesktop -y
 flatpak install flathub org.telegram.desktop -y
 flatpak install flathub com.spotify.Client -y
 flatpak install flathub md.obsidian.Obsidian -y
-mkdir ~/Obsidian/
+
+# Virtual manager
+sudo dnf install qemu -y
+sudo dnf install -y qemu-kvm libvirt virt-install bridge-utils
+sudo dnf install -y virt-manager
+sudo dnf install -y libvirt-devel virt-top libguestfs-tools guestfs-tools
+sudo systemctl enable libvirtd
+sudo systemctl start libvirtd
 
 # Fonts installation
 mkdir -p ~/.fonts/
