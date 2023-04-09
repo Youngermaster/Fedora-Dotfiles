@@ -27,6 +27,7 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 # General stuff
 sudo dnf install vim neofetch keepassxc gnome-tweaks gnome-extensions-app git cmake htop xrandr wget curl nmap ranger bat lsd discord flameshot google-chrome-stable -y
 sudo dnf install gnome-shell-extension-user-theme -y
+sudo dnf install -y cava obs-studio* wf-recorder
 
 # ZSH
 sudo dnf install zsh zsh-syntax-highlighting zsh-autosuggestions -y
@@ -159,14 +160,16 @@ cd giph
 sudo make install
 
 # Hyprland All Blue
-sudo dnf install -y ninja-build cmake meson gcc-c++ libxcb-devel libX11-devel pixman-devel wayland-protocols-devel cairo-devel pango-devel
+sudo dnf install -y ninja-build cmake meson gcc-c++ libxcb-devel libX11-devel pixman-devel wayland-protocols-devel cairo-devel pango-devel rofimoji
 sudo dnf install -y libinput-devel libinput-utils libgudev-devel
 sudo dnf install -y libdisplay-info libliftoff libseat libseat-devel
 sudo dnf install -y libdrm-devel libva-devel mesa-vulkan-drivers
 sudo dnf install -y wayland-devel libdrm-devel libxkbcommon-devel systemd-devel libseat-devel mesa-libEGL-devel libinput-devel xcb-util-wm-devel xorg-x11-server-Xwayland-devel mesa-libgbm-devel xcb-util-renderutil-devel
 sudo dnf install -y gcc-c++ git meson cmake "pkgconfig(cairo)" "pkgconfig(egl)" "pkgconfig(gbm)" "pkgconfig(gl)" "pkgconfig(glesv2)" "pkgconfig(libdrm)" "pkgconfig(libinput)" "pkgconfig(libseat)" "pkgconfig(libudev)" "pkgconfig(pango)" "pkgconfig(pangocairo)" "pkgconfig(pixman-1)" "pkgconfig(vulkan)" "pkgconfig(wayland-client)" "pkgconfig(wayland-protocols)" "pkgconfig(wayland-scanner)" "pkgconfig(wayland-server)" "pkgconfig(xcb)" "pkgconfig(xcb-icccm)" "pkgconfig(xcb-renderutil)" "pkgconfig(xkbcommon)" "pkgconfig(xwayland)" glslang-devel
 sudo dnf install -y hwdata hwdata-devel libdisplay-info libdisplay-info-devel xcb-util\*-devel
-sudo dnf install -y waybar wofi wlogout mako swappy grim slurp thunar python3-requests polkit-gnome pamix pavucontrol bluez bluez-tools bluez-libs blueman network-manager-applet gvfs thunar-archive-plugin file-roller btop jetbrains-mono-fonts-all lxappearance xfce4-settings qt6-* pipewire-libs qt6-qtwayland qt6-qtwayland-devel xdg-desktop-portal file-roller file-roller-nautilus gvfs* brightnessctl
+sudo dnf install -y waybar wofi wlogout mako swappy grim slurp thunar python3-requests polkit-gnome pamix pavucontrol bluez bluez-tools bluez-libs blueman network-manager-applet gvfs thunar-archive-plugin file-roller btop jetbrains-mono-fonts-all lxappearance xfce4-settings qt6-* pipewire-libs qt6-qtwayland qt6-qtwayland-devel xdg-desktop-portal file-roller file-roller-nautilus gvfs* brightnessctl google-noto-emoji-fonts swaylock
+sudo dnf install -y light fontawesome-fonts* dunst swaybg swayidle
+systemctl --user mask xdg-desktop-portal-gnome.service
 cd ~/GitHub/AnotherOnes
 cd Hyprland
 meson _build
@@ -187,3 +190,9 @@ ninja -C build
 cd hyprland-share-picker && make all
 sudo ninja -C build install
 sudo cp ./build/hyprland-share-picker /usr/bin
+cd ~/GitHub/AnotherOnes
+sudo dnf install -y cxxopts-devel
+cd pamixer
+meson setup build
+meson compile -C build
+sudo cp ./build/pamixer /usr/bin

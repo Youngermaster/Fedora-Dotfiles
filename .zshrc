@@ -268,6 +268,7 @@ setopt appendhistory
 export PATH=$PATH:$HOME/.cargo/env
 export PATH="$HOME/.local/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:$HOME/.nimble/bin
 export DOTNET_ROOT="/usr/share/dotnet"
 export PATH="$PATH:/usr/share/dotnet"
@@ -275,6 +276,12 @@ export PATH="$PATH:/home/youngermaster/Flutter/flutter/bin"
 export PATH="$PATH:/home/youngermaster/AndroidStudio/android-studio/bin"
 export PATH="$PATH:/home/youngermaster/JetBrains/Rider/bin/"
 export PATH="$PATH:/home/youngermaster/AppImages"
+## Flutter
+export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
+## Node Version Manager
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Android SDK Tools
 export PATH="$PATH:/home/youngermaster/Android/Sdk/build-tools/32.0.0/"
@@ -288,6 +295,8 @@ export PATH="$PATH:/usr/share/pomodoro_cli/"
 
 # Git config
 eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/aur
+ssh-add ~/.ssh/id_ed25519_young_bitbucket
 ssh-add ~/.ssh/id_ed25519_youngermaster_github
 ssh-add ~/.ssh/id_ed25519_youngermaster_gitlab
 ssh-add ~/.ssh/id_rsa_jmyoung_getaclub
@@ -298,3 +307,4 @@ clear
 
 # Set keymaps to LATAM
 #setxkbmap -layout latam,es
+
