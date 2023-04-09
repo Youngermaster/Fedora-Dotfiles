@@ -126,7 +126,7 @@
     },
     "custom/lock": {
         "tooltip": false,
-        "on-click": "swaylock",
+        "on-click": "swaylock -c 000000",
         "format": ""
     },
     "custom/spotify": {
