@@ -196,3 +196,5 @@ cd pamixer
 meson setup build
 meson compile -C build
 sudo cp ./build/pamixer /usr/bin
+
+sudo dnf install -y fontawesome5-fonts fontawesome5-free-fonts libdate-tz spdlog fmt* cmake meson scdoc wayland* spdlog* gtk3* gobject-introspection* upower* pulseaudio-libs* dbusmenu-qt* gtkmm3.0* dbus-devel* libdbusmenu-gtk3-* jsoncpp-* inotify-tools* libnl3*
